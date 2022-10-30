@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "cc459762-3ace-433b-9ef8-c10e3e8d8bbb",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22627505"
+	},
+	"item": [
+		{
+			"name": "doRegister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "Valeria2018@yandex.ru",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Aziz1992",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "9930861",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/doregister",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createuser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"grim@rambler.ru\",\r\n  \"name\": \"LRA153\",\r\n  \"tasks\": [5],\r\n  \"companies\": [58]\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/createuser",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createuser"
+					],
+					"query": [
+						{
+							"key": "companies",
+							"value": "[\"compani1\"]",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createcompany",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company_name\": \"HAHA\",\r\n  \"company_type\": \"ООО\",\r\n  \"company_users\": [\"grim@rambler.ru\"],\r\n  \"email_owner\": \"aa+1@mail.com\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/createcompany",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createcompany"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
